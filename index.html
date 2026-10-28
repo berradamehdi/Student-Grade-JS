@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Student Grade</title>
+</head>
+<body>
+    <div class="container">
+        <!-- btn-toggle -->
+        <div class="btn-toggle" onclick="toggleTheme()">
+            <i class="fa-regular fa-lightbulb"></i>
+        </div>
+
+        <!-- title -->
+        <h1 class="title"> student grade table </h1>
+
+        <!-- box-average -->
+        <div class="box-average">
+            <div class="average">
+                <p class="value-title"> grade average : </p>
+                <span class="value"> 0 </span>
+            </div>
+        </div>
+
+        <!-- box-content -->
+        <div class="box-content">
+            <div class="table-students">
+                
+            </div>
+            <div class="input-students">
+                <h2 class="titleInput"> <i class="fa-solid fa-child"></i> Add Student </h2>
+                <div class="input-box">
+                    <span class="icon"> <i class="fa-solid fa-user"></i> </span>
+                    <input type="text" placeholder="Student Name ..." class="input name">
+                </div>
+                <div class="input-box">
+                    <span class="icon"> <i class="fa-solid fa-chalkboard-user"></i> </span>
+                    <input type="text" placeholder="Student Course ..." class="input cours">
+                </div>
+                <div class="input-box">
+                    <span class="icon"> <i class="fa-solid fa-pen"></i> </span>
+                    <input type="text" placeholder="Student Grade ..." class="input grade">
+                </div>
+                <div class="box-btn-input">
+                    <button class="btn btn-add" onclick="handelAdd()">Add</button>
+                    <button class="btn btn-cancel" onclick="handleCancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="message"></p>
+    <p class="copy-right">Engineered by Berrada Mehdi © 2026</p>
+    <script src="https://kit.fontawesome.com/c3d5b4a9ba.js" crossorigin="anonymous"></script>
+    <script src="./js/toggle.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

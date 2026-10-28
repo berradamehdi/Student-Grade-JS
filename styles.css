@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+  --bg-main: #0b132b;       
+  --bg-surface: #1c2541;     
+  --bg-input: #070a17;       
+  --bg-main-light: #f8fafc;        
+  --bg-surface-light: #ffffff;     
+  --bg-input-light: #f1f5f9;       
+  
+  --text-primary: #edf2f4;  
+  --text-muted: #8d99ae;     
+  --text-primary-light: #0f172a;  
+  --text-muted-light: #64748b;     
+  
+  --primary: #3a86ff;       
+  --primary-hover: #2667cc;  
+  --primary-glow: rgba(58, 134, 255, 0.25);
+  --primary-light: #2563eb;        
+  --primary-hover-light: #1d4ed8;  
+  --primary-glow-light: rgba(37, 99, 235, 0.15);
+
+  --accent-success: #2ec4b6; 
+  --accent-danger: #e71d36;  
+  --accent-success-light: #0d9488; 
+  --accent-danger-light: #dc2626;  
+  
+  --border-color: #2b3a67;  
+  --border-color-light: #cbd5e1;  
+}
+
+/* -- Container -- */
+.container {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: .5s all;
+}
+
+/* -- toggle-shadow */
+.container > .btn-toggle {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    color: var(--bg-main-light);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.container > .btn-toggle:hover {
+    transform: scale(1.2);
+    transition: .5s all;
+}
+
+@media (max-width:767px) {
+    /* -- toggle-shadow */
+    .container > .btn-toggle {
+        font-size: 18px;
+    }
+}
+
+/* -- title */
+.container > .title {
+    font-size: 28px;
+    text-transform: capitalize;
+    color: var(--text-primary);
+}
+
+@media (max-width:767px) {
+    /* -- title */
+    .container > .title {
+        font-size: 18px;
+    }
+}
+
+/* -- box-average */
+.container > .box-average {
+    display: flex;
+    justify-content: right;
+    border-bottom: 2px solid var(--border-color-light);
+    padding-bottom: 10px;
+}
+
+.container > .box-average > .average {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.container > .box-average > .average > .value-title {
+    font-size: 18px;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+
+.container > .box-average > .average > .value {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--bg-main-light);
+    color: var(--text-primary-light);
+    border-radius: 10px;
+    font-weight: bold;
+} 
+
+@media (max-width:767px) {
+    .container > .box-average > .average > .value-title {
+        font-size: 14px;
+    }
+
+    .container > .box-average > .average > .value {
+        font-size: 14px;
+        padding: 5px 10px;
+    } 
+}
+
+/* -- box-content -- */
+.container > .box-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+/* -- table-students -- */
+.container > .box-content > .table-students {
+    width: 70%;
+    max-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    overflow: auto;
+}
+
+.container > .box-content > .table-students > .child-one {
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: var(--bg-input-light);
+    color: var(--bg-input);
+    text-align: center;
+    padding: 10px;
+}
+
+.container > .box-content > .table-students > .child-one:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.container > .box-content > .table-students > .child-one-op {
+    max-width: 100%;
+    overflow-x: auto;
+    grid-column: 4 / 6;
+    border-radius: 0 10px 0 0;
+}
+
+.container > .box-content > .table-students > .child-two {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    text-align: center;
+    padding: 10px;
+}
+
+.container > .box-content > .table-students > .btn-update {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.container > .box-content > .table-students > .btn-update:hover {
+    background-color: var(--primary-hover);
+}
+
+.container > .box-content > .table-students > .btn-delete {
+    background-color: var(--accent-danger);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.container > .box-content > .table-students > .btn-delete:hover {
+    background-color: var(--accent-danger-light);
+}
+
+/* -- inputs-students -- */
+.container > .box-content > .input-students {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container > .box-content > .input-students > .titleInput {
+    color: var(--text-primary);
+    font-size: 22px;
+}
+
+.container > .box-content > .input-students > .input-box {
+    display: flex;
+}
+
+.container > .box-content > .input-students > .input-box > .icon {
+    padding: 10px;
+    background-color: var(--text-primary);
+    color: var(--bg-input);
+    text-align: center;
+    width: 15%;
+    border-radius: 10px 0 0 10px;
+}
+
+.container > .box-content > .input-students > .input-box > .input {
+    padding: 10px;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    background-color: var(--bg-input);
+    width: 85%;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+}
+
+@media (max-width:768px) and (min-width:1023px) {
+    .container > .box-content > .table-students {
+        width: 60%;
+    }
+
+    .container > .box-content > .input-students {
+        width: 40%;
+        grid-row: 1/2;
+    }
+}
+
+@media (max-width:767px) {
+    .container > .box-content {
+        display: grid;
+        grid-template-columns: (1,1fr);
+    }
+    .container > .box-content > .table-students {
+        width: 100%;
+        max-width: 100%;
+    }
+    .container > .box-content > .input-students {
+        width: 100%;
+        grid-row: 1/2;
+    }
+}
+
+.container > .box-content > .input-students > .box-btn-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container > .box-content  > .input-students > .box-btn-input > .btn {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.container > .box-content  > .input-students > .box-btn-input > .btn-add {
+    background-color: var(--accent-success);
+    color: var(--text-primary);
+}
+
+.container > .box-content  > .input-students > .box-btn-input > .btn-add:hover {
+    background-color: var(--accent-success-light);
+    transition: .5s all;
+}
+
+.container > .box-content  > .input-students > .box-btn-input > .btn-cancel {
+    background-color: var(--primary);
+    color: var(--text-primary);
+}
+
+.container > .box-content  > .input-students > .box-btn-input > .btn-cancel:hover {
+    background-color: var(--primary-hover);
+    transition: .5s all;
+}
+
+/* -- message -- */
+.message {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-size: 16px;
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.success {
+    background-color: var(--accent-success);
+}
+
+.faild {
+    background-color: var(--accent-danger);
+}
+
+/* -- copy-right -- */
+.copy-right {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: var(--text-primary);
+}
